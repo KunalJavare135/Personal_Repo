@@ -4,6 +4,8 @@ WORKDIR /data
 
 RUN pip install django==3.2
 
+RUN usermod -aG docker jenkins
+
 COPY . .
 
 RUN python manage.py migrate
